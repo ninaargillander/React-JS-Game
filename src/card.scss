@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Courier+Prime&display=swap");
+
+/* Variables */
+$cardColor: #bdbaba;
+$pointsBox: #706f6f;
+
+body{
+  font-family: 'Courier Prime', monospace;
+}
+.card {
+  background-color: $cardColor;
+  height: 50vh;
+  width: 70vw;
+  border-radius: 4em;
+  margin: 10vh 0 0 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.cardDare{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  //padding: 12vh 0 0 25vw;
+}
+
+.cardDrink{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ // padding: 15vh 0 0 25vw;
+}
+
+.points{
+  background-color: $pointsBox;
+  color: rgb(37, 22, 22);
+  cursor: pointer;
+ // padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+  margin: 0 0 0 10vw;
+  border: 1px solid #000000;
+  border-radius: 2em;
+}
+
+#or{
+  display: flex;
+  justify-content: space-around;
+}
