@@ -9,26 +9,25 @@ class StartScreen extends Component {
 
     this.state = {
       numPlayers: 1,
-      player: ''
+      playerName: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(event) {
-
-
-    console.log(this.props.players)
-
-    /*  setTimeout(() => {
-       this.props.startGame(this.state.value);
-     }, 2000); */
+  handleSubmit() {
+    this.props.addPlayer(this.state.playerName);
+    this.props.startGame(1);
   }
 
   handleChange(event) {
     /*   const temp = event.target.value;
       this.setState({ numPlayers: temp }); */
+    this.setState({
+      playerName: event.target.value
+    });
+
     console.log(this.state.numPlayers)
   }
 
@@ -45,7 +44,7 @@ class StartScreen extends Component {
 
         <form onSubmit={this.handleSubmit}>
           <label> Namn! <br />
-            <input type="text" disabled={this.state.numPlayers === 0} value={this.state.value} onChange={this.handleChange} />
+            <input type="text" disabled={this.state.numPlayers === 0} value={this.state.playerName} onChange={this.handleChange} />
           </label><br />
           <input type="submit" value="Lägg till" />
         </form>

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
 class Player extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-      points: 0,
-      color: "",
-    }
+  constructor(name) {
+    super();
+    this.name = name;
+    this.points = 0;
+    this.color = '';
   }
 }
 
