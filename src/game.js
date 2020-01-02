@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import StartScreen from './startScreen.js';
 import Player from './player.js'
 import Card from './card.js';
-import './card.scss';
+import './css/card.scss';
+import './css/startScreen.scss';
 
 class Game extends Component {
   constructor(props) {

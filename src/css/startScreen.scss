@@ -1,0 +1,50 @@
+@import 'variables';
+
+.inputBox{
+    background-color: $cardColor;
+    height: 50vh;
+    width: 70vw;
+    border-radius: 4em;
+    margin: 10vh 0 0 10vw;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    background-color: $pointsBox ;
+    cursor: pointer;
+
+    border-radius: 1em;
+    border: 0.05em solid black;
+}
+
+.button:disabled{
+    background-color: $cardColor;
+    color: $pointsBox;
+    cursor: default;
+}
+
+.addPlayer{
+   color: black;
+}
+
+.letsPlay{
+    color: black;
+
+}
+
+.headerForm{
+    display: flex;
+    justify-content: center;
+}
+

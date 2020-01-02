@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Courier+Prime&display=swap");
-
-/* Variables */
-$cardColor: #bdbaba;
-$pointsBox: #706f6f;
+@import 'variables';
 
 body{
   font-family: 'Courier Prime', monospace;
+  background-color: $backgroundColor;
 }
+
 .card {
   background-color: $cardColor;
   height: 50vh;

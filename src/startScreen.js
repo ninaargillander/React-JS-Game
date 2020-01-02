@@ -50,20 +50,21 @@ class StartScreen extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Hellooooo</h1>
+      <div className="inputBox">
+        <h1 className="headerForm">Hellooooo</h1>
 
-        <form onSubmit={this.handleSubmit}>
-          <label> Namn! <br />
-            <input type="text"
-              placeholder={`Spelare  ${this.state.playerNum + 1}`}
-              value={this.state.playerName}
-              onChange={this.handleChange} />
-          </label><br />
-          <button type="submit"> Add</button>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <label> Namn!</label>
+          <input className="formInput" type="text"
+            placeholder={`Spelare  ${this.state.playerNum + 1}`}
+            value={this.state.playerName}
+            onChange={this.handleChange} />
+          <br />
+          <button className="button addPlayer" type="submit"> Add</button>
         </form>
 
         <button
+          className="button letsPlay"
           disabled={this.state.playerNum === 0 || this.state.playerNum === 1}
           onClick={() => { this.sendPlayers(); this.props.startGame(1); }}>Let's play!</button>
 
