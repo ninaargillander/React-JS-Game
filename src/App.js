@@ -5,6 +5,7 @@ import './App.css';
 
 /* npm install:
    node-sass
+   --save redux-form
 
 */
 

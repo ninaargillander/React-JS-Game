@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Player from './player.js';
 
+let index = 0;
 
 class StartScreen extends Component {
 
@@ -8,47 +9,63 @@ class StartScreen extends Component {
     super(props);
 
     this.state = {
-      numPlayers: 1,
-      playerName: ''
+      playerNum: 0,
+      playerName: '',
+      players: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendPlayers = this.sendPlayers.bind(this);
   }
 
-  handleSubmit() {
-    this.props.addPlayer(this.state.playerName);
-    this.props.startGame(1);
+  sendPlayers() {
+    this.props.callbackAddPlayers(this.state.players);
+  }
+
+  handleSubmit(event) {
+    let player = new Player(this.state.playerName, this.state.playerNum);
+    this.state.players.push(player);
+    // this.props.addPlayer(this.state.playerName);
+    //this.props.startGame(1);
+    this.setState({ playerName: '' });
+
+    this.setState((value) => {
+      return { playerNum: this.state.playerNum + 1 }
+    });
+
+    this.props.incrementPlayerNum();
+    event.preventDefault();
   }
 
   handleChange(event) {
-    /*   const temp = event.target.value;
-      this.setState({ numPlayers: temp }); */
     this.setState({
       playerName: event.target.value
     });
 
-    console.log(this.state.numPlayers)
+    console.log(this.state.playerNum)
   }
+
+
 
   render() {
     return (
       <div>
         <h1>Hellooooo</h1>
 
-        {/*  <form onSubmit={this.handleSubmit}>
-          <label> Hur många spelar idag? <br />
-            <input type="number" min="0" name="num" onChange={this.handleChange} />
-          </label><br />
-        </form> */}
-
         <form onSubmit={this.handleSubmit}>
           <label> Namn! <br />
-            <input type="text" disabled={this.state.numPlayers === 0} value={this.state.playerName} onChange={this.handleChange} />
+            <input type="text"
+              placeholder={`Spelare  ${this.state.playerNum + 1}`}
+              value={this.state.playerName}
+              onChange={this.handleChange} />
           </label><br />
-          <input type="submit" value="Lägg till" />
+          <button type="submit"> Add</button>
         </form>
 
+        <button
+          disabled={this.state.playerNum === 0 || this.state.playerNum === 1}
+          onClick={() => { this.sendPlayers(); this.props.startGame(1); }}>Let's play!</button>
 
       </div>
     )

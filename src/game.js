@@ -16,16 +16,25 @@ class Game extends Component {
     };
 
     this.setCardNum = this.setCardNum.bind(this);
-    this.addPlayer = this.addPlayer.bind(this);
     this.startGame = this.startGame.bind(this);
+    this.callbackAddPlayers = this.callbackAddPlayers.bind(this);
+    this.incrementPlayerNum = this.incrementPlayerNum.bind(this);
   }
 
-  addPlayer(name) {
-    let player = new Player(name);
-    this.state.players.push(player);
+  callbackAddPlayers(thePlayers) {
+    this.setState({ players: thePlayers });
+  }
+
+  incrementPlayerNum() {
+    this.setState((value) => {
+      return { playerNum: this.state.playerNum + 1 }
+    });
+
+    console.log('Players:' + this.state.players)
   }
 
   setCardNum() {
+    //increment cardNum
     this.setState((value) => {
       return { cardNum: this.state.cardNum + 1 }
     });
@@ -33,23 +42,26 @@ class Game extends Component {
   }
 
   startGame(num) {
-    this.setState({ playerNum: num });
+    this.setState({ gameView: num });
   }
 
   render() {
     let card = require('./cardInfo.json');
 
     // Check if 0 players, then add players in startScreen
-    if (this.state.playerNum === 0) {
+    if (this.state.gameView === 0) {
       return (
         <div>
-          <StartScreen addPlayer={this.addPlayer} startGame={this.startGame} />
+          <StartScreen
+            startGame={this.startGame}
+            callbackAddPlayers={this.callbackAddPlayers}
+            incrementPlayerNum={this.incrementPlayerNum}
+            playerNum={this.state.playerNum} />
         </div>
       )
     }
     console.log(this.state.players);
     return (
-
       < div >
         <Card dareText={card[this.state.cardNum].dare} darePoints={card[this.state.cardNum].pointsDare}
           drinks={card[this.state.cardNum].drinks} drinkPoints={card[this.state.cardNum].pointsDrinks}
