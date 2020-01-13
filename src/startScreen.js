@@ -39,11 +39,7 @@ class StartScreen extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      playerName: event.target.value
-    });
-
-    console.log(this.state.playerNum)
+    this.setState({ playerName: event.target.value });
   }
 
 

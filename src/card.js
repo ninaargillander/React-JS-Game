@@ -9,11 +9,11 @@ class Cards extends Component {
         return (
             <div className="card">
                 <div className="cardDare">
-                    <span className="text">{this.props.dareText}</span>  <button onClick={() => this.props.action()} className="points">Points: {this.props.darePoints}</button>
+                    <span className="text">{this.props.dareText}</span>  <button onClick={() => this.props.action(0)} className="points">Points: {this.props.darePoints}</button>
                 </div>
                 <span id="or">ELLER</span>
                 <div className="cardDrink" >
-                    <span className="text">Drinks: {this.props.drinks}</span> <button onClick={() => this.props.action()} className="points">Points: {this.props.drinkPoints}</button>
+                    <span className="text">Drinks: {this.props.drinks}</span> <button onClick={() => this.props.action(1)} className="points">Points: {this.props.drinkPoints}</button>
                 </div>
             </div >
 

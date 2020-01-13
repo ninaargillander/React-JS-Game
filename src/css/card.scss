@@ -5,6 +5,11 @@ body{
   background-color: $backgroundColor;
 }
 
+.container{
+  display: flex;
+  justify-content: flex-start;
+}
+
 .card {
   background-color: $cardColor;
   height: 50vh;
