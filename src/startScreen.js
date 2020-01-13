@@ -47,16 +47,16 @@ class StartScreen extends Component {
   render() {
     return (
       <div className="inputBox">
-        <h1 className="headerForm">Hellooooo</h1>
+        <h1 className="headerForm">Vem är med?</h1>
 
         <form className="form" onSubmit={this.handleSubmit}>
-          <label> Namn!</label>
+          <p> Namn!</p>
           <input className="formInput" type="text"
             placeholder={`Spelare  ${this.state.playerNum + 1}`}
             value={this.state.playerName}
             onChange={this.handleChange} />
           <br />
-          <button className="button addPlayer" type="submit"> Add</button>
+          <button className="button addPlayer" type="submit"> + </button>
         </form>
 
         <button

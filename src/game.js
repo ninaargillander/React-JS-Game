@@ -45,10 +45,20 @@ class Game extends Component {
 
     this.state.players[this.state.currentPlayer].addPoints(pointsToAdd);
 
-    //increment cardNum
+    //increment cardNum and currentPlayer
     this.setState((value) => {
-      return { cardNum: this.state.cardNum + 1 }
+      return {
+        cardNum: this.state.cardNum + 1,
+        currentPlayer: this.state.currentPlayer + 1
+      }
     });
+
+    if (this.state.currentPlayer == this.state.playerNum - 1) {
+      this.setState({ currentPlayer: 0 })
+    }
+    console.log('currentPlayer: ' + this.state.currentPlayer);
+    console.log(this.state.players[this.state.currentPlayer].name)
+
   }
 
   startGame(num) {
@@ -72,6 +82,7 @@ class Game extends Component {
       <div className="container">
         <LeaderBoard players={this.state.players} />
         <Card
+          player={this.state.players[this.state.currentPlayer]}
           dareText={card[this.state.cardNum].dare}
           darePoints={card[this.state.cardNum].pointsDare}
           drinks={card[this.state.cardNum].drinks}

@@ -12,10 +12,16 @@ class LeaderBoard extends Component {
     render() {
         return (
             <div className="leaderBoard">
-                <div className="player">
-                    <h5>{this.props.players[0].state.name}: {this.props.players[0].state.points}</h5>
+                <h1 id="lb-header">VEM VINNER?</h1>
+                {this.props.players.map((person) => (
+                    <div className="player">
+                        <div>
+                            <h5> {person.state.name}: {person.state.points}</h5>
+                        </div>
+                    </div>
 
-                </div>
+                ))
+                }
             </div>
         )
     };
