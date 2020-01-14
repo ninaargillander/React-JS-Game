@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Player from './player.js';
 
-let index = 0;
 
 class StartScreen extends Component {
 

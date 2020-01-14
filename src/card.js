@@ -8,7 +8,7 @@ class Cards extends Component {
     render() {
         return (
             <div className="card">
-                <h3>{'Namn:' + this.props.player.name}</h3>
+                <h1 id="name">{this.props.player.state.name + 's tur'}</h1>
                 <div className="cardDare cardText" onClick={() => this.props.action(0)} type="button">
                     <span className="text">{this.props.dareText}</span>
                 </div>

@@ -8,7 +8,7 @@
     flex-direction: column;
     
     background-color: $bg-leaderboard;
-    border-right: black solid 1px;
+    border-right: $lbBorder solid 2px;
 }
 
 .player{

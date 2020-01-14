@@ -1,22 +1,12 @@
 @import 'variables';
 
-body{
-  font-family: 'Courier Prime', monospace;
-  background-color: $backgroundColor;
-}
-
-.container{
-  display: flex;
-  justify-content: flex-start;
-}
-
 .card {
   background-color: $cardColor;
   height: 50vh;
   width: 70vw;
-  border-radius: 4em;
+  //border-radius: 4em;
   border: solid 1px $cardBorder;
-  margin: 10vh 0 0 10vw;
+  margin: 10vh 10vw 0 10vw;
 
   display: flex;
   flex-direction: column;
@@ -26,8 +16,15 @@ body{
 
 .cardText{
   cursor: pointer;
+  background-color: $pointsBox;
   border: 1px solid $cardBorder;
   padding: 1em;
+}
+
+.cardText:hover{
+  background-color: $hoverColor;
+  color: $lbBorder;
+  border-color: $lbBorder;
 }
 
 .cardDare{
@@ -60,7 +57,7 @@ body{
   margin: 0 0 0 15vw;
 
   border: 1px solid #000000;
-  border-radius: 2em;
+  //border-radius: 2em;
   font-weight: 800;
 
   position: absolute;
@@ -70,3 +67,10 @@ body{
   display: flex;
   justify-content: space-around;
 }
+
+#name{
+ // background-color: #a9a9a9;
+  display: flex;
+  justify-content: center;
+}
+

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import StartScreen from './startScreen.js';
-import Player from './player.js'
 import Card from './card.js';
 import LeaderBoard from './leaderBoard.js';
 import './css/card.scss';
 import './css/startScreen.scss';
 import './css/leaderBoard.scss';
+import './css/game.scss';
 
 let card = require('./cardInfo.json');
 
@@ -40,8 +40,8 @@ class Game extends Component {
 
   nextTurn(button) {
     let pointsToAdd
-    if (button == 0) { pointsToAdd = card[this.state.cardNum].pointsDare }
-    if (button == 1) { pointsToAdd = card[this.state.cardNum].pointsDrinks }
+    if (button === 0) { pointsToAdd = card[this.state.cardNum].pointsDare }
+    if (button === 1) { pointsToAdd = card[this.state.cardNum].pointsDrinks }
 
     this.state.players[this.state.currentPlayer].addPoints(pointsToAdd);
 
@@ -53,7 +53,7 @@ class Game extends Component {
       }
     });
 
-    if (this.state.currentPlayer == this.state.playerNum - 1) {
+    if (this.state.currentPlayer === this.state.playerNum - 1) {
       this.setState({ currentPlayer: 0 })
     }
     console.log('currentPlayer: ' + this.state.currentPlayer);
@@ -69,6 +69,7 @@ class Game extends Component {
     if (this.state.gameView === 0) {
       return (
         <div>
+          <div><h1 className="header">Ninas Fantastiska Dryckesspel</h1></div>
           <StartScreen
             startGame={this.startGame}
             callbackAddPlayers={this.callbackAddPlayers}
@@ -79,18 +80,20 @@ class Game extends Component {
     }
     console.log(this.state.players);
     return (
-      <div className="container">
-        <LeaderBoard players={this.state.players} />
-        <Card
-          player={this.state.players[this.state.currentPlayer]}
-          dareText={card[this.state.cardNum].dare}
-          darePoints={card[this.state.cardNum].pointsDare}
-          drinks={card[this.state.cardNum].drinks}
-          drinkPoints={card[this.state.cardNum].pointsDrinks}
-          action={this.nextTurn} />
+      <div>
+        <div><h1 className="header" >Ninas Fantastiska Dryckesspel</h1></div>
+        <div className="container">
+          <LeaderBoard players={this.state.players} />
+          <Card
+            player={this.state.players[this.state.currentPlayer]}
+            dareText={card[this.state.cardNum].dare}
+            darePoints={card[this.state.cardNum].pointsDare}
+            drinks={card[this.state.cardNum].drinks}
+            drinkPoints={card[this.state.cardNum].pointsDrinks}
+            action={this.nextTurn} />
+        </div>
       </div>
     );
-    console.log(this.state.players);
   }
 }
 

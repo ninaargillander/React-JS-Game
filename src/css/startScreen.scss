@@ -4,8 +4,8 @@
     background-color: $cardColor;
     height: 50vh;
     width: 70vw;
-    border-radius: 4em;
-    margin: 10vh 0 0 10vw;
+    //border-radius: 4em;
+    margin: 10vw 0 0 10vw;
 
     border: solid 1px $cardBorder;
   
@@ -30,13 +30,19 @@ input{
 .button{
     display: flex;
     justify-content: center;
-    background-color: $pointsBox ;
+    background-color: $buttonColor;
     cursor: pointer;
 
     font-family: inherit;
 
     border-radius: 1em;
     border: 0.05em solid $cardBorder;
+}
+
+.button:hover{
+    background-color: $hoverColor;
+    color: $lbBorder;
+    border-color: $lbBorder;;
 }
 
 .button:disabled{

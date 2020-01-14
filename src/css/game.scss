@@ -1,0 +1,17 @@
+@import 'variables';
+
+body{
+  font-family: 'Courier Prime', monospace;
+  background-color: $backgroundColor;
+}
+
+.container{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header{
+    justify-content: center;
+    border-bottom: black solid 1px;
+    margin: 0.3em 0 0 0;
+}

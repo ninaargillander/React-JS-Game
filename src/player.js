@@ -15,7 +15,8 @@ class Player extends Component {
   }
 
   addPoints(x) {
-    console.log('in addPoints');
+    //should use setState
+    //this.setState({ points: this.state.points + x })
     this.state.points = this.state.points + x;
   }
 }
