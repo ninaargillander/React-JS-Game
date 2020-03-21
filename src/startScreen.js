@@ -51,7 +51,7 @@ class StartScreen extends Component {
         <form className="form" onSubmit={this.handleSubmit}>
           <p> Namn!</p>
           <input className="formInput" type="text"
-            placeholder={`Spelare  ${this.state.playerNum + 1}`}
+            placeholder={` Spelare  ${this.state.playerNum + 1}`}
             value={this.state.playerName}
             onChange={this.handleChange} />
           <br />

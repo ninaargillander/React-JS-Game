@@ -56,9 +56,6 @@ class Game extends Component {
     if (this.state.currentPlayer === this.state.playerNum - 1) {
       this.setState({ currentPlayer: 0 })
     }
-    console.log('currentPlayer: ' + this.state.currentPlayer);
-    console.log(this.state.players[this.state.currentPlayer].name)
-
   }
 
   startGame(num) {
@@ -78,7 +75,7 @@ class Game extends Component {
         </div>
       )
     }
-    console.log(this.state.players);
+
     return (
       <div>
         <div><h1 className="header" >Ninas Fantastiska Dryckesspel</h1></div>

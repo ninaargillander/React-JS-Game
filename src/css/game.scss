@@ -12,6 +12,7 @@ body{
 
 .header{
     justify-content: center;
-    border-bottom: black solid 1px;
-    margin: 0.3em 0 0 0;
+    border-bottom: $lbBorder solid 2px;
+    padding: 0.3em 0 0.2em 31vw;
+    margin: 0 0 0 0;
 }

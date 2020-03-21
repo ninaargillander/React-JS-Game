@@ -1,5 +1,29 @@
 [
   {
+    "dare": "Slagit mig på fyllan",
+    "pointsDare": 9,
+    "drinks": 3,
+    "pointsDrinks": 3
+  },
+  {
+    "dare": "Hoppat fallskärm",
+    "pointsDare": 5,
+    "drinks": 5,
+    "pointsDrinks": 5
+  },
+  {
+    "dare": "FIREBALL",
+    "pointsDare": 5,
+    "drinks": 10,
+    "pointsDrinks": 24
+  },
+  {
+    "dare": "Vattenfall",
+    "pointsDare": 3,
+    "drinks": 5,
+    "pointsDrinks": 9
+  },
+  {
     "dare": "Sjung La Voix",
     "pointsDare": 2,
     "drinks": 3,
@@ -12,7 +36,7 @@
     "pointsDrinks": 5
   },
   {
-    "dare": "FIREBALL",
+    "dare": "Eldboll",
     "pointsDare": 5,
     "drinks": 10,
     "pointsDrinks": 24

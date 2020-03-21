@@ -14,9 +14,7 @@ class LeaderBoard extends Component {
                     .sort((a, b) => b.state.points - a.state.points)
                     .map((person) => (
                         <div className="player" key={person.state.id}>
-                            <div>
-                                <h5> {person.state.name}: {person.state.points}</h5>
-                            </div>
+                            <h5 className="playerName"> {person.state.name}:</h5> <span id="playerPoints">{person.state.points}</span>
                         </div>
 
                     ))
